@@ -21,7 +21,7 @@ fn main() {
     
     let (mut rl, thread) = raylib::init()
     .size(screen_width as i32, screen_height as i32)
-    .title("raylib [core] example - keyboard input")
+    .title("bouncing ball")
     .build();
     
     rl.set_target_fps(60); // Set our game to run at 60 frames-per-second
