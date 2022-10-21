@@ -3,6 +3,13 @@
 version = 3
 
 [[package]]
+name = "bouncing_ball_raylib"
+version = "0.1.0"
+dependencies = [
+ "raylib",
+]
+
+[[package]]
 name = "cc"
 version = "1.0.73"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -62,11 +69,4 @@ dependencies = [
  "cc",
  "cmake",
  "fs_extra",
-]
-
-[[package]]
-name = "raylib_test"
-version = "0.1.0"
-dependencies = [
- "raylib",
 ]

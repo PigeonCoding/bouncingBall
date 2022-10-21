@@ -7,8 +7,6 @@ struct BallPrefab{
     radius: f32
 }
 
-
-
 fn main() {
     //let mut framecounter = 0;
     let mut x_move: i32 = 1;
@@ -20,11 +18,8 @@ fn main() {
 
     let (mut rl, thread) = raylib::init()
     .size(screen_width as i32, screen_height as i32)
-<<<<<<< HEAD
     .title("bouncing ball demo")
-=======
     .title("bouncing ball")
->>>>>>> 0b446668f4d16a6e85181d042d02e796cc111f50
     .build();
 
     rl.set_target_fps(60); // Set our game to run at 60 frames-per-second
