@@ -1,4 +1,3 @@
-//use raylib::prelude::KeyboardKey::*;
 use raylib::prelude::*;
 use std::io;
 
@@ -15,27 +14,31 @@ fn main() {
     let mut x_move: i32 = 1;
     let mut y_move: i32 = -1;
 
-    
+
     let screen_width = 800.0;
     let screen_height = 450.0;
-    
+
     let (mut rl, thread) = raylib::init()
     .size(screen_width as i32, screen_height as i32)
+<<<<<<< HEAD
+    .title("bouncing ball demo")
+=======
     .title("bouncing ball")
+>>>>>>> 0b446668f4d16a6e85181d042d02e796cc111f50
     .build();
-    
+
     rl.set_target_fps(60); // Set our game to run at 60 frames-per-second
-    
+
     let mut ball = BallPrefab{
         posiion: Vector2::new( 100.0, 100.0),
         speed: 6.0,
         radius: 30.0,
     };
-    
+
     let mut vec = (x_move as f32, y_move as f32);
 
     while !rl.window_should_close() {
-        
+
         let mut d = rl.begin_drawing(&thread);
 
         Bounce(screen_height, screen_width, x_move as f32, y_move as f32, &mut ball, &mut vec);
@@ -53,7 +56,7 @@ fn Bounce(
     ball: &mut BallPrefab,
     vec: &mut (f32, f32)
 ){
-    
+
 
     if ball.posiion.x - ball.radius < 0.0 || ball.posiion.x + ball.radius > width
     {
@@ -63,14 +66,14 @@ fn Bounce(
     {
         vec.1 = vec.1 * -1.0;
     }
-    
-    
+
+
     ball.posiion += Vector2::new(vec.0 , vec.1);
 }
 
 fn draw(
     d: &mut RaylibDrawHandle,
-    ball: &mut BallPrefab 
+    ball: &mut BallPrefab
 ){
     d.clear_background(Color::BLACK);
     d.draw_circle_v(ball.posiion, ball.radius, Color::WHITE);
