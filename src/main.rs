@@ -22,7 +22,7 @@ fn main() {
     .title("bouncing ball")
     .build();
 
-    rl.set_target_fps(60); // Set our game to run at 60 frames-per-second
+    rl.set_target_fps(60);
 
     let mut ball = BallPrefab{
         posiion: Vector2::new( 100.0, 100.0),
@@ -37,9 +37,8 @@ fn main() {
         let mut d = rl.begin_drawing(&thread);
 
         Bounce(screen_height, screen_width, x_move as f32, y_move as f32, &mut ball, &mut vec);
+        
         draw(&mut d, &mut ball);
-
-        //d.draw_circle_v(ball_position, 50.0, Color::MAROON);
     }
 }
 
