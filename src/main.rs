@@ -1,16 +1,16 @@
 use raylib::prelude::*;
-use std::io;
+// use std::io;
 
 struct BallPrefab{
     posiion: Vector2,
-    speed: f32,
+    // speed: f32,
     radius: f32
 }
 
 fn main() {
     //let mut framecounter = 0;
-    let mut x_move: i32 = 1;
-    let mut y_move: i32 = -1;
+    let x_move: i32 = 1;
+    let y_move: i32 = -1;
 
 
     let screen_width = 800.0;
@@ -26,7 +26,7 @@ fn main() {
 
     let mut ball = BallPrefab{
         posiion: Vector2::new( 100.0, 100.0),
-        speed: 6.0,
+        // speed: 10.0,
         radius: 30.0,
     };
 
@@ -36,17 +36,17 @@ fn main() {
 
         let mut d = rl.begin_drawing(&thread);
 
-        Bounce(screen_height, screen_width, x_move as f32, y_move as f32, &mut ball, &mut vec);
-        
+        bounce(screen_height, screen_width, x_move as f32, y_move as f32, &mut ball, &mut vec);
+
         draw(&mut d, &mut ball);
     }
 }
 
-fn Bounce(
+fn bounce(
     height: f32,
     width: f32,
-    x_move: f32,
-    y_move: f32,
+    _x_move: f32,
+    _y_move: f32,
     ball: &mut BallPrefab,
     vec: &mut (f32, f32)
 ){
